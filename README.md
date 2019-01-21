@@ -74,7 +74,24 @@ If you're using Docker for Windows, ensure the "Shared Drives" feature is enable
 
 ### Bringing up the stack
 
-**Note**: In case you switched branch or updated a base image - you may need to run `docker-compose build` first
+Download all project repositories on the same directory level and checkout most up to date branch on each repository.
+
+```console
+$ git clone https://github.com/TU-Munich/endorse-elk.git
+$ git clone https://github.com/TU-Munich/endorse-data-nlp.git
+$ git clone https://github.com/TU-Munich/endorse-dashboard.git
+```
+
+Change directory to endorse-elk:
+```console
+$ cd endorse-elk/
+```
+
+**Note**: In case you switched branch, updated a base image or you are running the project for the first time, you need to run `docker-compose build` first:
+
+```console
+$ docker-compose build
+```
 
 Start the stack using `docker-compose`:
 
@@ -92,6 +109,8 @@ By default, the stack exposes the following ports:
 * 9200: Elasticsearch HTTP
 * 9300: Elasticsearch TCP transport
 * 5601: Kibana
+* 3002: Endorse Data NLP backed
+* 3000: Endorse Dashboard frontend
 
 **WARNING**: If you're using `boot2docker`, you must access it via the `boot2docker` IP address instead of `localhost`.
 
