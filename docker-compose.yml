@@ -68,17 +68,17 @@ services:
     volumes:
       - /data/projects/
 
-  endorse-dashboard:
-    build:
-      context: ../endorse-dashboard
-    ports:
-      - "3000:3000"
-    environment:
-      - NLP_SERVICE_BASE_URL=http://endorse-data-nlp:3002/api/1
-    networks:
-      - elk
-    links:
-      - endorse-data-nlp
+#  endorse-dashboard:
+#    build:
+#      context: ../endorse-dashboard
+#    ports:
+#      - "3000:3000"
+#    environment:
+#      - NLP_SERVICE_BASE_URL=http://endorse-data-nlp:3002/api/1
+#    networks:
+#      - elk
+#    links:
+#      - endorse-data-nlp
 
 networks:
   elk:
